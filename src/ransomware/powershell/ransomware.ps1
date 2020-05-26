@@ -37,7 +37,7 @@ function Create-AesKey(){
 function Encrypt-String ($key, $file, $aesManaged, $encryptor){
     $bytes=[System.IO.File]::ReadAllBytes($file);
     $encryptedData = $encryptor.TransformFinalBlock($bytes, 0, $bytes.Length);
-    [byte[]] $fullData = $aesManaged.IV + $encryptedData
+    [byte[]] $fullData = $aesManaged.IV + $encryptedData;
     [System.Convert]::ToBase64String($fullData)
 }
 
