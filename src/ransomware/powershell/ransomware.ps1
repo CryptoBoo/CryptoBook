@@ -55,7 +55,7 @@ function Not-Too-Big ($file, $key, $aesManaged, $encryptor){
     $erroractionPreference = "stop";
     try{
         $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor;
-        Remove-Item –path $file -force;
+        Remove-Item -Path $file -force;
         Set-Content -Path $file'.enc' -Value $encryptedcontent
     }
     catch{
